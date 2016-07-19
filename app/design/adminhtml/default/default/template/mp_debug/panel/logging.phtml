@@ -15,7 +15,7 @@ $logging = $this->getLogging();
     C9.3,4,9,4.3,9,4.6V11.4z M9,16.4C9,16.7,9.3,17,9.6,17h1.8c0.3,0,0.6-0.3,0.6-0.6v-1.8c0-0.3-0.3-0.6-0.6-0.6H9.6
     C9.3,14,9,14.3,9,14.6V16.4z"/>
 </svg>
-            <span class="sf-toolbar-value"><?php echo $this->formatNumber($this->getLogging()->getTotalLineCount(), 0) ?></span>
+            <span class="sf-toolbar-value"><?php echo is_object($logging)? $this->formatNumber($logging->getTotalLineCount(), 0) :'' ?></span>
             <span class="sf-toolbar-label"><?php echo $this->__('lines'); ?></span>
         </div>
     </a>
@@ -24,7 +24,7 @@ $logging = $this->getLogging();
         <?php foreach ($this->getLogFiles() as $log): ?>
             <div class="sf-toolbar-info-piece">
                 <b><?php echo $this->escapeHtml($log) ?></b>
-                <span><?php echo $this->formatNumber($logging->getLineCount($log), 0) ?></span>
+                <span><?php echo is_object($logging)? $this->formatNumber($logging->getLineCount($log), 0) :'' ?></span>
             </div>
         <?php endforeach; ?>
     </div>
