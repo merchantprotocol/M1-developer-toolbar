@@ -28,6 +28,7 @@ class MP_Debug_Block_Logging extends MP_Debug_Block_Panel
      */
     public function getLogFiles()
     {
+		if (!is_object($this->getLogging())) return array();
         return $this->getLogging()->getFiles();
     }
 
