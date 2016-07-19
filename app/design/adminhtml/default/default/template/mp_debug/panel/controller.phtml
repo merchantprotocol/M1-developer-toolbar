@@ -14,7 +14,7 @@ $info = $this->getController();
                 <?php echo $this->getResponseCode() ?>
             </span>
             <span class="sf-toolbar-label">@</span>
-            <span class="sf-toolbar-value"><?php echo $this->escapeHtml($info->getRouteName()) ?></span>
+            <span class="sf-toolbar-value"><?php echo (is_object(info)) ?$this->escapeHtml($info->getRouteName()):''; ?></span>
 
             <span class="sf-toolbar-label">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="24" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
@@ -49,22 +49,22 @@ $info = $this->getController();
 
         <div class="sf-toolbar-info-piece">
             <b><?php echo $this->__('Module'); ?></b>
-            <span><?php echo $info->getModule() ?></span>
+            <span><?php echo (is_object(info))? $info->getModule() :'' ?></span>
         </div>
 
         <div class="sf-toolbar-info-piece">
             <b><?php echo $this->__('Controller'); ?></b>
-            <span><?php echo $info->getReference() ?></span>
+            <span><?php echo (is_object(info))? $info->getReference() :'' ?></span>
         </div>
 
         <div class="sf-toolbar-info-piece">
             <b><?php echo $this->__('Original Request Path'); ?></b>
-            <span><?php echo $this->escapeHtml($info->getRequestOriginalPath()); ?></span>
+            <span><?php echo (is_object(info))? $this->escapeHtml($info->getRequestOriginalPath()) :''; ?></span>
         </div>
 
         <div class="sf-toolbar-info-piece">
             <b><?php echo $this->__('Request Path'); ?></b>
-            <span><?php echo $this->escapeHtml($info->getRequestPath()); ?></span>
+            <span><?php echo (is_object(info))? $this->escapeHtml($info->getRequestPath()) :''; ?></span>
         </div>
     </div>
 </div>
