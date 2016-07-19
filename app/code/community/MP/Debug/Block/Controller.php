@@ -26,6 +26,7 @@ class MP_Debug_Block_Controller extends MP_Debug_Block_Panel
      */
     public function getResponseCode()
     {
+		if (!is_object($this->getController())) return false;
         return $this->getController()->getResponseCode() ?: $this->getAction()->getResponse()->getHttpResponseCode();
     }
 
