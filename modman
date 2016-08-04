@@ -1,0 +1,15 @@
+# Comments are supported, begin a line with a hash
+MP_Debug.xml                 app/etc/modules/MP_Debug.xml
+code/Debug                      app/code/community/MP/Debug
+
+# frontend
+design/layout/mp_debug.xml   app/design/frontend/base/default/layout/mp_debug.xml
+design/template/mp_debug     app/design/frontend/base/default/template/mp_debug
+skin                            skin/frontend/base/default/mp_debug/
+
+# adminhtml
+design/layout/mp_debug.xml   app/design/adminhtml/default/default/layout/mp_debug.xml
+design/template/mp_debug     app/design/adminhtml/default/default/template/mp_debug
+skin                            skin/adminhtml/default/default/mp_debug/
+
+#connect/Magneto_Debug.xml      var/connect/Magneto_Debug.xml
