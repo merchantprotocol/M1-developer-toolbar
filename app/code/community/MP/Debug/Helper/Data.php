@@ -352,7 +352,7 @@ class MP_Debug_Helper_Data extends Mage_Core_Helper_Data
      */
     public function getGlobalSession()
     {
-        return isset($_SESSION) ? $_SESSION : array();
+        return Mage::getSingleton('core/session')->getData() ?: array();
     }
 
 
@@ -363,7 +363,7 @@ class MP_Debug_Helper_Data extends Mage_Core_Helper_Data
      */
     public function getGlobalPost()
     {
-        return isset($_POST) ? $_POST : array();
+        return $this->_getRequest()->getPost() ?: array();
     }
 
 
@@ -374,7 +374,7 @@ class MP_Debug_Helper_Data extends Mage_Core_Helper_Data
      */
     public function getGlobalGet()
     {
-        return isset($_GET) ? $_GET : array();
+        return $this->_getRequest()->getParams() ?: array();
     }
 
 

@@ -30,9 +30,9 @@ class MP_Debug_Helper_Performance extends Mage_Core_Helper_Abstract
     {
         $category = self::CORE_CATEGORY;
 
-        if (strpos($timerName, 'mage::dispatch') === 0 || strpos($timerName, 'column.phtml') > 0) {
+        if (strpos($timerName, 'mage::dispatch') === 0 || strpos($timerName, 'column.phtml') !== 0) {
             $category = self::SECTION;
-        } else if (strpos($timerName, 'Model_Resource') > 0) {
+        } else if (strpos($timerName, 'Model_Resource') !== 0) {
             $category = self::DB_CATEGORY;
         } else if (strpos($timerName, 'EAV') === 0 || strpos($timerName, '_LOAD_ATTRIBUTE_') === 0 || strpos($timerName, '__EAV_') === 0) {
             $category = self::EAV_CATEGORY;
@@ -44,11 +44,11 @@ class MP_Debug_Helper_Performance extends Mage_Core_Helper_Abstract
             $category = self::LAYOUT_CATEGORY;
         } else if (strpos($timerName, 'init_config') === 0) {
             $category = self::CONFIG_CATEGORY;
-        } else if (strpos($timerName, 'layout/') === 0 || strpos($timerName, 'layout_') > 0) {
+        } else if (strpos($timerName, 'layout/') === 0 || strpos($timerName, 'layout_') !== 0) {
             $category = self::LAYOUT_CATEGORY;
         } else if (strpos($timerName, 'Mage_Core_Model_Design') === 0) {
             $category = self::LAYOUT_CATEGORY;
-        } else if (strpos($timerName, '.phtml') > 0) {
+        } else if (strpos($timerName, '.phtml') !== 0) {
             $category = self::LAYOUT_CATEGORY;
         }
 

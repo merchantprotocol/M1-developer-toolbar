@@ -413,7 +413,7 @@ class MP_Debug_Model_Observer
         }
 
         // Don't capture debug blocks
-        if (strpos($blockClass, 'MP_Debug_Block') > 0) {
+        if (strpos($blockClass, 'MP_Debug_Block') !== 0) {
             return false;
         }
 

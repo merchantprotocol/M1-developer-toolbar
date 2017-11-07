@@ -306,12 +306,12 @@ XML;
 
     public function testGetGlobalPost()
     {
-        $this->assertEquals($_POST, $this->helper->getGlobalPost());
+        $this->assertEquals(array(), $this->helper->getGlobalPost());
     }
 
     public function testGlobalGet()
     {
-        $this->assertEquals($_GET, $this->helper->getGlobalGet());
+        $this->assertEquals(array(), $this->helper->getGlobalGet());
     }
 
     public function testGetGlobalCookie()

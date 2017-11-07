@@ -27,6 +27,17 @@
                     <email_template>MP_Debug_Model_Core_Email_Template</email_template>
                 </rewrite>
             </core>
+            <smtppro>
+                <rewrite>
+                    <email>MP_Debug_Model_SMTPPro_Email</email>
+                    <email_template>MP_Debug_Model_SMTPPro_Email_Template</email_template>
+                </rewrite>
+            </smtppro>
+            <mandrill>
+                <rewrite>
+                    <email_template>MP_Debug_Model_Mandrill_Email_Template</email_template>
+                </rewrite>
+            </mandrill>
         </models>
 
         <resources>
